@@ -849,10 +849,10 @@ function clearCSV() {
   document.getElementById('error-msg-csv').style.display='none';
   resetResultPanel();
 }
-
+//fetch('/static/sample_transactions_100.csv')
 async function loadSampleCSV() {
   try {
-    const res = await fetch('/static/sample_transactions_100.csv');
+    const res = await fetch('/sample_transactions_100.csv');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
     const rows = parseCSV(text);
